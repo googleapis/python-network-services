@@ -2411,7 +2411,6 @@ def test_network_services_transport_auth_adc(transport_class):
     [
         transports.NetworkServicesGrpcTransport,
         transports.NetworkServicesGrpcAsyncIOTransport,
-        transports.NetworkServicesRestTransport,
     ],
 )
 def test_network_services_transport_auth_gdch_credentials(transport_class):
