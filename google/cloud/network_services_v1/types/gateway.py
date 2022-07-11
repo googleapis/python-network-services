@@ -20,15 +20,15 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'Gateway',
-        'ListGatewaysRequest',
-        'ListGatewaysResponse',
-        'GetGatewayRequest',
-        'CreateGatewayRequest',
-        'UpdateGatewayRequest',
-        'DeleteGatewayRequest',
+        "Gateway",
+        "ListGatewaysRequest",
+        "ListGatewaysResponse",
+        "GetGatewayRequest",
+        "CreateGatewayRequest",
+        "UpdateGatewayRequest",
+        "DeleteGatewayRequest",
     },
 )
 
@@ -85,6 +85,7 @@ class Gateway(proto.Message):
             terminated. If empty, TLS termination is
             disabled.
     """
+
     class Type(proto.Enum):
         r"""The type of the customer-managed gateway. Possible values are:
 
@@ -193,7 +194,7 @@ class ListGatewaysResponse(proto.Message):
     gateways = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='Gateway',
+        message="Gateway",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -241,7 +242,7 @@ class CreateGatewayRequest(proto.Message):
     gateway = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='Gateway',
+        message="Gateway",
     )
 
 
@@ -268,7 +269,7 @@ class UpdateGatewayRequest(proto.Message):
     gateway = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='Gateway',
+        message="Gateway",
     )
 
 

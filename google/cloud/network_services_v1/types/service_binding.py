@@ -19,14 +19,14 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'ServiceBinding',
-        'ListServiceBindingsRequest',
-        'ListServiceBindingsResponse',
-        'GetServiceBindingRequest',
-        'CreateServiceBindingRequest',
-        'DeleteServiceBindingRequest',
+        "ServiceBinding",
+        "ListServiceBindingsRequest",
+        "ListServiceBindingsResponse",
+        "GetServiceBindingRequest",
+        "CreateServiceBindingRequest",
+        "DeleteServiceBindingRequest",
     },
 )
 
@@ -138,7 +138,7 @@ class ListServiceBindingsResponse(proto.Message):
     service_bindings = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='ServiceBinding',
+        message="ServiceBinding",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -188,7 +188,7 @@ class CreateServiceBindingRequest(proto.Message):
     service_binding = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='ServiceBinding',
+        message="ServiceBinding",
     )
 
 

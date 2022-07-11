@@ -20,15 +20,15 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'TlsRoute',
-        'ListTlsRoutesRequest',
-        'ListTlsRoutesResponse',
-        'GetTlsRouteRequest',
-        'CreateTlsRouteRequest',
-        'UpdateTlsRouteRequest',
-        'DeleteTlsRouteRequest',
+        "TlsRoute",
+        "ListTlsRoutesRequest",
+        "ListTlsRoutesResponse",
+        "GetTlsRouteRequest",
+        "CreateTlsRouteRequest",
+        "UpdateTlsRouteRequest",
+        "DeleteTlsRouteRequest",
     },
 )
 
@@ -94,12 +94,12 @@ class TlsRoute(proto.Message):
         matches = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='TlsRoute.RouteMatch',
+            message="TlsRoute.RouteMatch",
         )
         action = proto.Field(
             proto.MESSAGE,
             number=2,
-            message='TlsRoute.RouteAction',
+            message="TlsRoute.RouteAction",
         )
 
     class RouteMatch(proto.Message):
@@ -147,7 +147,7 @@ class TlsRoute(proto.Message):
         destinations = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='TlsRoute.RouteDestination',
+            message="TlsRoute.RouteDestination",
         )
 
     class RouteDestination(proto.Message):
@@ -262,7 +262,7 @@ class ListTlsRoutesResponse(proto.Message):
     tls_routes = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='TlsRoute',
+        message="TlsRoute",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -310,7 +310,7 @@ class CreateTlsRouteRequest(proto.Message):
     tls_route = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='TlsRoute',
+        message="TlsRoute",
     )
 
 
@@ -337,7 +337,7 @@ class UpdateTlsRouteRequest(proto.Message):
     tls_route = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='TlsRoute',
+        message="TlsRoute",
     )
 
 

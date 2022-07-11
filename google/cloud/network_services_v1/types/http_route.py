@@ -21,15 +21,15 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'HttpRoute',
-        'ListHttpRoutesRequest',
-        'ListHttpRoutesResponse',
-        'GetHttpRouteRequest',
-        'CreateHttpRouteRequest',
-        'UpdateHttpRouteRequest',
-        'DeleteHttpRouteRequest',
+        "HttpRoute",
+        "ListHttpRoutesRequest",
+        "ListHttpRoutesResponse",
+        "GetHttpRouteRequest",
+        "CreateHttpRouteRequest",
+        "UpdateHttpRouteRequest",
+        "DeleteHttpRouteRequest",
     },
 )
 
@@ -185,33 +185,33 @@ class HttpRoute(proto.Message):
         exact_match = proto.Field(
             proto.STRING,
             number=2,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         regex_match = proto.Field(
             proto.STRING,
             number=3,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         prefix_match = proto.Field(
             proto.STRING,
             number=4,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         present_match = proto.Field(
             proto.BOOL,
             number=5,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         suffix_match = proto.Field(
             proto.STRING,
             number=6,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         range_match = proto.Field(
             proto.MESSAGE,
             number=7,
-            oneof='MatchType',
-            message='HttpRoute.HeaderMatch.IntegerRange',
+            oneof="MatchType",
+            message="HttpRoute.HeaderMatch.IntegerRange",
         )
         header = proto.Field(
             proto.STRING,
@@ -267,17 +267,17 @@ class HttpRoute(proto.Message):
         exact_match = proto.Field(
             proto.STRING,
             number=2,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         regex_match = proto.Field(
             proto.STRING,
             number=3,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         present_match = proto.Field(
             proto.BOOL,
             number=4,
-            oneof='MatchType',
+            oneof="MatchType",
         )
         query_parameter = proto.Field(
             proto.STRING,
@@ -339,17 +339,17 @@ class HttpRoute(proto.Message):
         full_path_match = proto.Field(
             proto.STRING,
             number=1,
-            oneof='PathMatch',
+            oneof="PathMatch",
         )
         prefix_match = proto.Field(
             proto.STRING,
             number=2,
-            oneof='PathMatch',
+            oneof="PathMatch",
         )
         regex_match = proto.Field(
             proto.STRING,
             number=3,
-            oneof='PathMatch',
+            oneof="PathMatch",
         )
         ignore_case = proto.Field(
             proto.BOOL,
@@ -358,12 +358,12 @@ class HttpRoute(proto.Message):
         headers = proto.RepeatedField(
             proto.MESSAGE,
             number=5,
-            message='HttpRoute.HeaderMatch',
+            message="HttpRoute.HeaderMatch",
         )
         query_parameters = proto.RepeatedField(
             proto.MESSAGE,
             number=6,
-            message='HttpRoute.QueryParameterMatch',
+            message="HttpRoute.QueryParameterMatch",
         )
 
     class Destination(proto.Message):
@@ -442,6 +442,7 @@ class HttpRoute(proto.Message):
                 request instead of the one that was supplied in
                 the request.
         """
+
         class ResponseCode(proto.Enum):
             r"""Supported HTTP response code."""
             RESPONSE_CODE_UNSPECIFIED = 0
@@ -466,7 +467,7 @@ class HttpRoute(proto.Message):
         response_code = proto.Field(
             proto.ENUM,
             number=4,
-            enum='HttpRoute.Redirect.ResponseCode',
+            enum="HttpRoute.Redirect.ResponseCode",
         )
         https_redirect = proto.Field(
             proto.BOOL,
@@ -550,12 +551,12 @@ class HttpRoute(proto.Message):
         delay = proto.Field(
             proto.MESSAGE,
             number=1,
-            message='HttpRoute.FaultInjectionPolicy.Delay',
+            message="HttpRoute.FaultInjectionPolicy.Delay",
         )
         abort = proto.Field(
             proto.MESSAGE,
             number=2,
-            message='HttpRoute.FaultInjectionPolicy.Abort',
+            message="HttpRoute.FaultInjectionPolicy.Abort",
         )
 
     class HeaderModifier(proto.Message):
@@ -682,7 +683,7 @@ class HttpRoute(proto.Message):
         destination = proto.Field(
             proto.MESSAGE,
             number=1,
-            message='HttpRoute.Destination',
+            message="HttpRoute.Destination",
         )
 
     class CorsPolicy(proto.Message):
@@ -816,32 +817,32 @@ class HttpRoute(proto.Message):
         destinations = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='HttpRoute.Destination',
+            message="HttpRoute.Destination",
         )
         redirect = proto.Field(
             proto.MESSAGE,
             number=2,
-            message='HttpRoute.Redirect',
+            message="HttpRoute.Redirect",
         )
         fault_injection_policy = proto.Field(
             proto.MESSAGE,
             number=4,
-            message='HttpRoute.FaultInjectionPolicy',
+            message="HttpRoute.FaultInjectionPolicy",
         )
         request_header_modifier = proto.Field(
             proto.MESSAGE,
             number=5,
-            message='HttpRoute.HeaderModifier',
+            message="HttpRoute.HeaderModifier",
         )
         response_header_modifier = proto.Field(
             proto.MESSAGE,
             number=6,
-            message='HttpRoute.HeaderModifier',
+            message="HttpRoute.HeaderModifier",
         )
         url_rewrite = proto.Field(
             proto.MESSAGE,
             number=7,
-            message='HttpRoute.URLRewrite',
+            message="HttpRoute.URLRewrite",
         )
         timeout = proto.Field(
             proto.MESSAGE,
@@ -851,17 +852,17 @@ class HttpRoute(proto.Message):
         retry_policy = proto.Field(
             proto.MESSAGE,
             number=9,
-            message='HttpRoute.RetryPolicy',
+            message="HttpRoute.RetryPolicy",
         )
         request_mirror_policy = proto.Field(
             proto.MESSAGE,
             number=10,
-            message='HttpRoute.RequestMirrorPolicy',
+            message="HttpRoute.RequestMirrorPolicy",
         )
         cors_policy = proto.Field(
             proto.MESSAGE,
             number=11,
-            message='HttpRoute.CorsPolicy',
+            message="HttpRoute.CorsPolicy",
         )
 
     class RouteRule(proto.Message):
@@ -889,12 +890,12 @@ class HttpRoute(proto.Message):
         matches = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='HttpRoute.RouteMatch',
+            message="HttpRoute.RouteMatch",
         )
         action = proto.Field(
             proto.MESSAGE,
             number=2,
-            message='HttpRoute.RouteAction',
+            message="HttpRoute.RouteAction",
         )
 
     name = proto.Field(
@@ -995,7 +996,7 @@ class ListHttpRoutesResponse(proto.Message):
     http_routes = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='HttpRoute',
+        message="HttpRoute",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -1043,7 +1044,7 @@ class CreateHttpRouteRequest(proto.Message):
     http_route = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='HttpRoute',
+        message="HttpRoute",
     )
 
 
@@ -1070,7 +1071,7 @@ class UpdateHttpRouteRequest(proto.Message):
     http_route = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='HttpRoute',
+        message="HttpRoute",
     )
 
 

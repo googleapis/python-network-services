@@ -21,15 +21,15 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'GrpcRoute',
-        'ListGrpcRoutesRequest',
-        'ListGrpcRoutesResponse',
-        'GetGrpcRouteRequest',
-        'CreateGrpcRouteRequest',
-        'UpdateGrpcRouteRequest',
-        'DeleteGrpcRouteRequest',
+        "GrpcRoute",
+        "ListGrpcRoutesRequest",
+        "ListGrpcRoutesResponse",
+        "GetGrpcRouteRequest",
+        "CreateGrpcRouteRequest",
+        "UpdateGrpcRouteRequest",
+        "DeleteGrpcRouteRequest",
     },
 )
 
@@ -141,6 +141,7 @@ class GrpcRoute(proto.Message):
 
                 This field is a member of `oneof`_ ``_case_sensitive``.
         """
+
         class Type(proto.Enum):
             r"""The type of the match."""
             TYPE_UNSPECIFIED = 0
@@ -150,7 +151,7 @@ class GrpcRoute(proto.Message):
         type_ = proto.Field(
             proto.ENUM,
             number=1,
-            enum='GrpcRoute.MethodMatch.Type',
+            enum="GrpcRoute.MethodMatch.Type",
         )
         grpc_service = proto.Field(
             proto.STRING,
@@ -179,6 +180,7 @@ class GrpcRoute(proto.Message):
             value (str):
                 Required. The value of the header.
         """
+
         class Type(proto.Enum):
             r"""The type of match."""
             TYPE_UNSPECIFIED = 0
@@ -188,7 +190,7 @@ class GrpcRoute(proto.Message):
         type_ = proto.Field(
             proto.ENUM,
             number=1,
-            enum='GrpcRoute.HeaderMatch.Type',
+            enum="GrpcRoute.HeaderMatch.Type",
         )
         key = proto.Field(
             proto.STRING,
@@ -219,12 +221,12 @@ class GrpcRoute(proto.Message):
             proto.MESSAGE,
             number=1,
             optional=True,
-            message='GrpcRoute.MethodMatch',
+            message="GrpcRoute.MethodMatch",
         )
         headers = proto.RepeatedField(
             proto.MESSAGE,
             number=2,
-            message='GrpcRoute.HeaderMatch',
+            message="GrpcRoute.HeaderMatch",
         )
 
     class Destination(proto.Message):
@@ -263,7 +265,7 @@ class GrpcRoute(proto.Message):
         service_name = proto.Field(
             proto.STRING,
             number=1,
-            oneof='destination_type',
+            oneof="destination_type",
         )
         weight = proto.Field(
             proto.INT32,
@@ -357,13 +359,13 @@ class GrpcRoute(proto.Message):
             proto.MESSAGE,
             number=1,
             optional=True,
-            message='GrpcRoute.FaultInjectionPolicy.Delay',
+            message="GrpcRoute.FaultInjectionPolicy.Delay",
         )
         abort = proto.Field(
             proto.MESSAGE,
             number=2,
             optional=True,
-            message='GrpcRoute.FaultInjectionPolicy.Abort',
+            message="GrpcRoute.FaultInjectionPolicy.Abort",
         )
 
     class RetryPolicy(proto.Message):
@@ -436,12 +438,12 @@ class GrpcRoute(proto.Message):
         destinations = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='GrpcRoute.Destination',
+            message="GrpcRoute.Destination",
         )
         fault_injection_policy = proto.Field(
             proto.MESSAGE,
             number=3,
-            message='GrpcRoute.FaultInjectionPolicy',
+            message="GrpcRoute.FaultInjectionPolicy",
         )
         timeout = proto.Field(
             proto.MESSAGE,
@@ -451,7 +453,7 @@ class GrpcRoute(proto.Message):
         retry_policy = proto.Field(
             proto.MESSAGE,
             number=8,
-            message='GrpcRoute.RetryPolicy',
+            message="GrpcRoute.RetryPolicy",
         )
 
     class RouteRule(proto.Message):
@@ -473,12 +475,12 @@ class GrpcRoute(proto.Message):
         matches = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='GrpcRoute.RouteMatch',
+            message="GrpcRoute.RouteMatch",
         )
         action = proto.Field(
             proto.MESSAGE,
             number=2,
-            message='GrpcRoute.RouteAction',
+            message="GrpcRoute.RouteAction",
         )
 
     name = proto.Field(
@@ -579,7 +581,7 @@ class ListGrpcRoutesResponse(proto.Message):
     grpc_routes = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='GrpcRoute',
+        message="GrpcRoute",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -627,7 +629,7 @@ class CreateGrpcRouteRequest(proto.Message):
     grpc_route = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='GrpcRoute',
+        message="GrpcRoute",
     )
 
 
@@ -654,7 +656,7 @@ class UpdateGrpcRouteRequest(proto.Message):
     grpc_route = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='GrpcRoute',
+        message="GrpcRoute",
     )
 
 

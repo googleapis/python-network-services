@@ -20,15 +20,15 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'Mesh',
-        'ListMeshesRequest',
-        'ListMeshesResponse',
-        'GetMeshRequest',
-        'CreateMeshRequest',
-        'UpdateMeshRequest',
-        'DeleteMeshRequest',
+        "Mesh",
+        "ListMeshesRequest",
+        "ListMeshesResponse",
+        "GetMeshRequest",
+        "CreateMeshRequest",
+        "UpdateMeshRequest",
+        "DeleteMeshRequest",
     },
 )
 
@@ -154,7 +154,7 @@ class ListMeshesResponse(proto.Message):
     meshes = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='Mesh',
+        message="Mesh",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -202,7 +202,7 @@ class CreateMeshRequest(proto.Message):
     mesh = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='Mesh',
+        message="Mesh",
     )
 
 
@@ -229,7 +229,7 @@ class UpdateMeshRequest(proto.Message):
     mesh = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='Mesh',
+        message="Mesh",
     )
 
 

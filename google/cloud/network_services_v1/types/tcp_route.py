@@ -20,15 +20,15 @@ from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
-    package='google.cloud.networkservices.v1',
+    package="google.cloud.networkservices.v1",
     manifest={
-        'TcpRoute',
-        'ListTcpRoutesRequest',
-        'ListTcpRoutesResponse',
-        'GetTcpRouteRequest',
-        'CreateTcpRouteRequest',
-        'UpdateTcpRouteRequest',
-        'DeleteTcpRouteRequest',
+        "TcpRoute",
+        "ListTcpRoutesRequest",
+        "ListTcpRoutesResponse",
+        "GetTcpRouteRequest",
+        "CreateTcpRouteRequest",
+        "UpdateTcpRouteRequest",
+        "DeleteTcpRouteRequest",
     },
 )
 
@@ -99,12 +99,12 @@ class TcpRoute(proto.Message):
         matches = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='TcpRoute.RouteMatch',
+            message="TcpRoute.RouteMatch",
         )
         action = proto.Field(
             proto.MESSAGE,
             number=2,
-            message='TcpRoute.RouteAction',
+            message="TcpRoute.RouteAction",
         )
 
     class RouteMatch(proto.Message):
@@ -160,7 +160,7 @@ class TcpRoute(proto.Message):
         destinations = proto.RepeatedField(
             proto.MESSAGE,
             number=1,
-            message='TcpRoute.RouteDestination',
+            message="TcpRoute.RouteDestination",
         )
         original_destination = proto.Field(
             proto.BOOL,
@@ -296,7 +296,7 @@ class ListTcpRoutesResponse(proto.Message):
     tcp_routes = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='TcpRoute',
+        message="TcpRoute",
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -344,7 +344,7 @@ class CreateTcpRouteRequest(proto.Message):
     tcp_route = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='TcpRoute',
+        message="TcpRoute",
     )
 
 
@@ -371,7 +371,7 @@ class UpdateTcpRouteRequest(proto.Message):
     tcp_route = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='TcpRoute',
+        message="TcpRoute",
     )
 
 
