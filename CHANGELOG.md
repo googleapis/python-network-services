@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/googleapis/python-network-services/compare/v0.1.1...v0.1.2) (2022-07-14)
+
+
+### Bug Fixes
+
+* require python 3.7+ ([#24](https://github.com/googleapis/python-network-services/issues/24)) ([86b9b43](https://github.com/googleapis/python-network-services/commit/86b9b43f15fbe341c6f9eddfa7a520185c2d2668))
+
 ## [0.1.1](https://github.com/googleapis/python-network-services/compare/v0.1.0...v0.1.1) (2022-06-07)
 
 
