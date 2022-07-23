@@ -5131,8 +5131,11 @@ class NetworkServicesAsyncClient:
                 expression that further constrains the role binding
                 based on attributes about the request and/or target
                 resource.
+
                 **JSON Example**
+
                 ::
+
                     {
                       "bindings": [
                         {
@@ -5156,8 +5159,11 @@ class NetworkServicesAsyncClient:
                         }
                       ]
                     }
+
                 **YAML Example**
+
                 ::
+
                     bindings:
                     - members:
                       - user:mike@example.com
@@ -5172,6 +5178,7 @@ class NetworkServicesAsyncClient:
                         title: expirable access
                         description: Does not grant access after Sep 2020
                         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+
                 For a description of IAM and its features, see the `IAM
                 developer's
                 guide <https://cloud.google.com/iam/docs>`__.
@@ -5245,8 +5252,11 @@ class NetworkServicesAsyncClient:
                 expression that further constrains the role binding
                 based on attributes about the request and/or target
                 resource.
+
                 **JSON Example**
+
                 ::
+
                     {
                       "bindings": [
                         {
@@ -5270,8 +5280,11 @@ class NetworkServicesAsyncClient:
                         }
                       ]
                     }
+
                 **YAML Example**
+
                 ::
+
                     bindings:
                     - members:
                       - user:mike@example.com
@@ -5286,6 +5299,7 @@ class NetworkServicesAsyncClient:
                         title: expirable access
                         description: Does not grant access after Sep 2020
                         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+
                 For a description of IAM and its features, see the `IAM
                 developer's
                 guide <https://cloud.google.com/iam/docs>`__.

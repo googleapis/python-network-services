@@ -62,7 +62,7 @@ class HttpRoute(proto.Message):
             exception that:
 
             -  IPs are not allowed.
-            -  A hostname may be prefixed with a wildcard label (*.).
+            -  A hostname may be prefixed with a wildcard label (\*.).
                The wildcard label must appear by itself as the first
                label.
 
@@ -82,9 +82,9 @@ class HttpRoute(proto.Message):
             rejected.
 
             For example, while it is acceptable for routes for the
-            hostnames "*.foo.bar.com" and "*.bar.com" to be associated
+            hostnames "\*.foo.bar.com" and "\*.bar.com" to be associated
             with the same Mesh (or Gateways under the same scope), it is
-            not possible to associate two routes both with "*.bar.com"
+            not possible to associate two routes both with "\*.bar.com"
             or both with "bar.com".
         meshes (Sequence[str]):
             Optional. Meshes defines a list of meshes this HttpRoute is
@@ -564,7 +564,7 @@ class HttpRoute(proto.Message):
         and HTTP response.
 
         Attributes:
-            set_ (Mapping[str, str]):
+            set (Mapping[str, str]):
                 Completely overwrite/replace the headers with
                 given map where key is the name of the header,
                 value is the value of the header.
@@ -577,7 +577,7 @@ class HttpRoute(proto.Message):
                 specified in the list.
         """
 
-        set_ = proto.MapField(
+        set = proto.MapField(
             proto.STRING,
             proto.STRING,
             number=1,

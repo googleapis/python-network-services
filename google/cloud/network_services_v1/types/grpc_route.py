@@ -68,7 +68,7 @@ class GrpcRoute(proto.Message):
             with 2 notable exceptions:
 
             -  IPs are not allowed.
-            -  A hostname may be prefixed with a wildcard label (*.).
+            -  A hostname may be prefixed with a wildcard label (\*.).
                The wildcard label must appear by itself as the first
                label.
 
@@ -88,9 +88,9 @@ class GrpcRoute(proto.Message):
             rejected.
 
             For example, while it is acceptable for routes for the
-            hostnames "*.foo.bar.com" and "*.bar.com" to be associated
+            hostnames "\*.foo.bar.com" and "\*.bar.com" to be associated
             with the same route, it is not possible to associate two
-            routes both with "*.bar.com" or both with "bar.com".
+            routes both with "\*.bar.com" or both with "bar.com".
 
             If a port is specified, then gRPC clients must use the
             channel URI with the port to match this rule (i.e.
