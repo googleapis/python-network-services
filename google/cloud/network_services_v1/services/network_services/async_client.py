@@ -16,7 +16,17 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+)
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -223,9 +233,9 @@ class NetworkServicesAsyncClient:
     def __init__(
         self,
         *,
-        credentials: ga_credentials.Credentials = None,
+        credentials: Optional[ga_credentials.Credentials] = None,
         transport: Union[str, NetworkServicesTransport] = "grpc_asyncio",
-        client_options: ClientOptions = None,
+        client_options: Optional[ClientOptions] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
         """Instantiates the network services client.
@@ -269,11 +279,13 @@ class NetworkServicesAsyncClient:
 
     async def list_endpoint_policies(
         self,
-        request: Union[endpoint_policy.ListEndpointPoliciesRequest, dict] = None,
+        request: Optional[
+            Union[endpoint_policy.ListEndpointPoliciesRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListEndpointPoliciesAsyncPager:
         r"""Lists EndpointPolicies in a given project and
@@ -307,7 +319,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListEndpointPoliciesRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListEndpointPoliciesRequest, dict]]):
                 The request object. Request used with the
                 ListEndpointPolicies method.
             parent (:class:`str`):
@@ -386,11 +398,11 @@ class NetworkServicesAsyncClient:
 
     async def get_endpoint_policy(
         self,
-        request: Union[endpoint_policy.GetEndpointPolicyRequest, dict] = None,
+        request: Optional[Union[endpoint_policy.GetEndpointPolicyRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> endpoint_policy.EndpointPolicy:
         r"""Gets details of a single EndpointPolicy.
@@ -422,7 +434,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetEndpointPolicyRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetEndpointPolicyRequest, dict]]):
                 The request object. Request used with the
                 GetEndpointPolicy method.
             name (:class:`str`):
@@ -493,13 +505,15 @@ class NetworkServicesAsyncClient:
 
     async def create_endpoint_policy(
         self,
-        request: Union[gcn_endpoint_policy.CreateEndpointPolicyRequest, dict] = None,
+        request: Optional[
+            Union[gcn_endpoint_policy.CreateEndpointPolicyRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        endpoint_policy: gcn_endpoint_policy.EndpointPolicy = None,
-        endpoint_policy_id: str = None,
+        parent: Optional[str] = None,
+        endpoint_policy: Optional[gcn_endpoint_policy.EndpointPolicy] = None,
+        endpoint_policy_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new EndpointPolicy in a given project and
@@ -542,7 +556,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateEndpointPolicyRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateEndpointPolicyRequest, dict]]):
                 The request object. Request used with the
                 CreateEndpointPolicy method.
             parent (:class:`str`):
@@ -640,12 +654,14 @@ class NetworkServicesAsyncClient:
 
     async def update_endpoint_policy(
         self,
-        request: Union[gcn_endpoint_policy.UpdateEndpointPolicyRequest, dict] = None,
+        request: Optional[
+            Union[gcn_endpoint_policy.UpdateEndpointPolicyRequest, dict]
+        ] = None,
         *,
-        endpoint_policy: gcn_endpoint_policy.EndpointPolicy = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        endpoint_policy: Optional[gcn_endpoint_policy.EndpointPolicy] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single EndpointPolicy.
@@ -685,7 +701,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateEndpointPolicyRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateEndpointPolicyRequest, dict]]):
                 The request object. Request used with the
                 UpdateEndpointPolicy method.
             endpoint_policy (:class:`google.cloud.network_services_v1.types.EndpointPolicy`):
@@ -780,11 +796,13 @@ class NetworkServicesAsyncClient:
 
     async def delete_endpoint_policy(
         self,
-        request: Union[endpoint_policy.DeleteEndpointPolicyRequest, dict] = None,
+        request: Optional[
+            Union[endpoint_policy.DeleteEndpointPolicyRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single EndpointPolicy.
@@ -820,7 +838,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteEndpointPolicyRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteEndpointPolicyRequest, dict]]):
                 The request object. Request used with the
                 DeleteEndpointPolicy method.
             name (:class:`str`):
@@ -905,11 +923,11 @@ class NetworkServicesAsyncClient:
 
     async def list_gateways(
         self,
-        request: Union[gateway.ListGatewaysRequest, dict] = None,
+        request: Optional[Union[gateway.ListGatewaysRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListGatewaysAsyncPager:
         r"""Lists Gateways in a given project and location.
@@ -942,7 +960,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListGatewaysRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListGatewaysRequest, dict]]):
                 The request object. Request used with the ListGateways
                 method.
             parent (:class:`str`):
@@ -1021,11 +1039,11 @@ class NetworkServicesAsyncClient:
 
     async def get_gateway(
         self,
-        request: Union[gateway.GetGatewayRequest, dict] = None,
+        request: Optional[Union[gateway.GetGatewayRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> gateway.Gateway:
         r"""Gets details of a single Gateway.
@@ -1057,7 +1075,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetGatewayRequest, dict]]):
                 The request object. Request used by the GetGateway
                 method.
             name (:class:`str`):
@@ -1129,13 +1147,13 @@ class NetworkServicesAsyncClient:
 
     async def create_gateway(
         self,
-        request: Union[gcn_gateway.CreateGatewayRequest, dict] = None,
+        request: Optional[Union[gcn_gateway.CreateGatewayRequest, dict]] = None,
         *,
-        parent: str = None,
-        gateway: gcn_gateway.Gateway = None,
-        gateway_id: str = None,
+        parent: Optional[str] = None,
+        gateway: Optional[gcn_gateway.Gateway] = None,
+        gateway_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new Gateway in a given project and
@@ -1179,7 +1197,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateGatewayRequest, dict]]):
                 The request object. Request used by the CreateGateway
                 method.
             parent (:class:`str`):
@@ -1277,12 +1295,12 @@ class NetworkServicesAsyncClient:
 
     async def update_gateway(
         self,
-        request: Union[gcn_gateway.UpdateGatewayRequest, dict] = None,
+        request: Optional[Union[gcn_gateway.UpdateGatewayRequest, dict]] = None,
         *,
-        gateway: gcn_gateway.Gateway = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        gateway: Optional[gcn_gateway.Gateway] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single Gateway.
@@ -1323,7 +1341,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateGatewayRequest, dict]]):
                 The request object. Request used by the UpdateGateway
                 method.
             gateway (:class:`google.cloud.network_services_v1.types.Gateway`):
@@ -1416,11 +1434,11 @@ class NetworkServicesAsyncClient:
 
     async def delete_gateway(
         self,
-        request: Union[gateway.DeleteGatewayRequest, dict] = None,
+        request: Optional[Union[gateway.DeleteGatewayRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single Gateway.
@@ -1456,7 +1474,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteGatewayRequest, dict]]):
                 The request object. Request used by the DeleteGateway
                 method.
             name (:class:`str`):
@@ -1540,11 +1558,11 @@ class NetworkServicesAsyncClient:
 
     async def list_grpc_routes(
         self,
-        request: Union[grpc_route.ListGrpcRoutesRequest, dict] = None,
+        request: Optional[Union[grpc_route.ListGrpcRoutesRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListGrpcRoutesAsyncPager:
         r"""Lists GrpcRoutes in a given project and location.
@@ -1577,7 +1595,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListGrpcRoutesRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListGrpcRoutesRequest, dict]]):
                 The request object. Request used with the ListGrpcRoutes
                 method.
             parent (:class:`str`):
@@ -1656,11 +1674,11 @@ class NetworkServicesAsyncClient:
 
     async def get_grpc_route(
         self,
-        request: Union[grpc_route.GetGrpcRouteRequest, dict] = None,
+        request: Optional[Union[grpc_route.GetGrpcRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> grpc_route.GrpcRoute:
         r"""Gets details of a single GrpcRoute.
@@ -1692,7 +1710,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetGrpcRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetGrpcRouteRequest, dict]]):
                 The request object. Request used by the GetGrpcRoute
                 method.
             name (:class:`str`):
@@ -1759,13 +1777,13 @@ class NetworkServicesAsyncClient:
 
     async def create_grpc_route(
         self,
-        request: Union[gcn_grpc_route.CreateGrpcRouteRequest, dict] = None,
+        request: Optional[Union[gcn_grpc_route.CreateGrpcRouteRequest, dict]] = None,
         *,
-        parent: str = None,
-        grpc_route: gcn_grpc_route.GrpcRoute = None,
-        grpc_route_id: str = None,
+        parent: Optional[str] = None,
+        grpc_route: Optional[gcn_grpc_route.GrpcRoute] = None,
+        grpc_route_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new GrpcRoute in a given project and
@@ -1808,7 +1826,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateGrpcRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateGrpcRouteRequest, dict]]):
                 The request object. Request used by the CreateGrpcRoute
                 method.
             parent (:class:`str`):
@@ -1902,12 +1920,12 @@ class NetworkServicesAsyncClient:
 
     async def update_grpc_route(
         self,
-        request: Union[gcn_grpc_route.UpdateGrpcRouteRequest, dict] = None,
+        request: Optional[Union[gcn_grpc_route.UpdateGrpcRouteRequest, dict]] = None,
         *,
-        grpc_route: gcn_grpc_route.GrpcRoute = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        grpc_route: Optional[gcn_grpc_route.GrpcRoute] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single GrpcRoute.
@@ -1947,7 +1965,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateGrpcRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateGrpcRouteRequest, dict]]):
                 The request object. Request used by the UpdateGrpcRoute
                 method.
             grpc_route (:class:`google.cloud.network_services_v1.types.GrpcRoute`):
@@ -2036,11 +2054,11 @@ class NetworkServicesAsyncClient:
 
     async def delete_grpc_route(
         self,
-        request: Union[grpc_route.DeleteGrpcRouteRequest, dict] = None,
+        request: Optional[Union[grpc_route.DeleteGrpcRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single GrpcRoute.
@@ -2076,7 +2094,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteGrpcRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteGrpcRouteRequest, dict]]):
                 The request object. Request used by the DeleteGrpcRoute
                 method.
             name (:class:`str`):
@@ -2160,11 +2178,11 @@ class NetworkServicesAsyncClient:
 
     async def list_http_routes(
         self,
-        request: Union[http_route.ListHttpRoutesRequest, dict] = None,
+        request: Optional[Union[http_route.ListHttpRoutesRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListHttpRoutesAsyncPager:
         r"""Lists HttpRoute in a given project and location.
@@ -2197,7 +2215,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListHttpRoutesRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListHttpRoutesRequest, dict]]):
                 The request object. Request used with the ListHttpRoutes
                 method.
             parent (:class:`str`):
@@ -2276,11 +2294,11 @@ class NetworkServicesAsyncClient:
 
     async def get_http_route(
         self,
-        request: Union[http_route.GetHttpRouteRequest, dict] = None,
+        request: Optional[Union[http_route.GetHttpRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> http_route.HttpRoute:
         r"""Gets details of a single HttpRoute.
@@ -2312,7 +2330,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetHttpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetHttpRouteRequest, dict]]):
                 The request object. Request used by the GetHttpRoute
                 method.
             name (:class:`str`):
@@ -2379,13 +2397,13 @@ class NetworkServicesAsyncClient:
 
     async def create_http_route(
         self,
-        request: Union[gcn_http_route.CreateHttpRouteRequest, dict] = None,
+        request: Optional[Union[gcn_http_route.CreateHttpRouteRequest, dict]] = None,
         *,
-        parent: str = None,
-        http_route: gcn_http_route.HttpRoute = None,
-        http_route_id: str = None,
+        parent: Optional[str] = None,
+        http_route: Optional[gcn_http_route.HttpRoute] = None,
+        http_route_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new HttpRoute in a given project and
@@ -2428,7 +2446,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateHttpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateHttpRouteRequest, dict]]):
                 The request object. Request used by the HttpRoute
                 method.
             parent (:class:`str`):
@@ -2522,12 +2540,12 @@ class NetworkServicesAsyncClient:
 
     async def update_http_route(
         self,
-        request: Union[gcn_http_route.UpdateHttpRouteRequest, dict] = None,
+        request: Optional[Union[gcn_http_route.UpdateHttpRouteRequest, dict]] = None,
         *,
-        http_route: gcn_http_route.HttpRoute = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        http_route: Optional[gcn_http_route.HttpRoute] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single HttpRoute.
@@ -2567,7 +2585,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateHttpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateHttpRouteRequest, dict]]):
                 The request object. Request used by the UpdateHttpRoute
                 method.
             http_route (:class:`google.cloud.network_services_v1.types.HttpRoute`):
@@ -2656,11 +2674,11 @@ class NetworkServicesAsyncClient:
 
     async def delete_http_route(
         self,
-        request: Union[http_route.DeleteHttpRouteRequest, dict] = None,
+        request: Optional[Union[http_route.DeleteHttpRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single HttpRoute.
@@ -2696,7 +2714,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteHttpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteHttpRouteRequest, dict]]):
                 The request object. Request used by the DeleteHttpRoute
                 method.
             name (:class:`str`):
@@ -2780,11 +2798,11 @@ class NetworkServicesAsyncClient:
 
     async def list_tcp_routes(
         self,
-        request: Union[tcp_route.ListTcpRoutesRequest, dict] = None,
+        request: Optional[Union[tcp_route.ListTcpRoutesRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListTcpRoutesAsyncPager:
         r"""Lists TcpRoute in a given project and location.
@@ -2817,7 +2835,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListTcpRoutesRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListTcpRoutesRequest, dict]]):
                 The request object. Request used with the ListTcpRoutes
                 method.
             parent (:class:`str`):
@@ -2896,11 +2914,11 @@ class NetworkServicesAsyncClient:
 
     async def get_tcp_route(
         self,
-        request: Union[tcp_route.GetTcpRouteRequest, dict] = None,
+        request: Optional[Union[tcp_route.GetTcpRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> tcp_route.TcpRoute:
         r"""Gets details of a single TcpRoute.
@@ -2932,7 +2950,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetTcpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetTcpRouteRequest, dict]]):
                 The request object. Request used by the GetTcpRoute
                 method.
             name (:class:`str`):
@@ -2999,13 +3017,13 @@ class NetworkServicesAsyncClient:
 
     async def create_tcp_route(
         self,
-        request: Union[gcn_tcp_route.CreateTcpRouteRequest, dict] = None,
+        request: Optional[Union[gcn_tcp_route.CreateTcpRouteRequest, dict]] = None,
         *,
-        parent: str = None,
-        tcp_route: gcn_tcp_route.TcpRoute = None,
-        tcp_route_id: str = None,
+        parent: Optional[str] = None,
+        tcp_route: Optional[gcn_tcp_route.TcpRoute] = None,
+        tcp_route_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new TcpRoute in a given project and
@@ -3047,7 +3065,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateTcpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateTcpRouteRequest, dict]]):
                 The request object. Request used by the TcpRoute method.
             parent (:class:`str`):
                 Required. The parent resource of the TcpRoute. Must be
@@ -3141,12 +3159,12 @@ class NetworkServicesAsyncClient:
 
     async def update_tcp_route(
         self,
-        request: Union[gcn_tcp_route.UpdateTcpRouteRequest, dict] = None,
+        request: Optional[Union[gcn_tcp_route.UpdateTcpRouteRequest, dict]] = None,
         *,
-        tcp_route: gcn_tcp_route.TcpRoute = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        tcp_route: Optional[gcn_tcp_route.TcpRoute] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single TcpRoute.
@@ -3185,7 +3203,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateTcpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateTcpRouteRequest, dict]]):
                 The request object. Request used by the UpdateTcpRoute
                 method.
             tcp_route (:class:`google.cloud.network_services_v1.types.TcpRoute`):
@@ -3274,11 +3292,11 @@ class NetworkServicesAsyncClient:
 
     async def delete_tcp_route(
         self,
-        request: Union[tcp_route.DeleteTcpRouteRequest, dict] = None,
+        request: Optional[Union[tcp_route.DeleteTcpRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single TcpRoute.
@@ -3314,7 +3332,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteTcpRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteTcpRouteRequest, dict]]):
                 The request object. Request used by the DeleteTcpRoute
                 method.
             name (:class:`str`):
@@ -3398,11 +3416,11 @@ class NetworkServicesAsyncClient:
 
     async def list_tls_routes(
         self,
-        request: Union[tls_route.ListTlsRoutesRequest, dict] = None,
+        request: Optional[Union[tls_route.ListTlsRoutesRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListTlsRoutesAsyncPager:
         r"""Lists TlsRoute in a given project and location.
@@ -3435,7 +3453,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListTlsRoutesRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListTlsRoutesRequest, dict]]):
                 The request object. Request used with the ListTlsRoutes
                 method.
             parent (:class:`str`):
@@ -3514,11 +3532,11 @@ class NetworkServicesAsyncClient:
 
     async def get_tls_route(
         self,
-        request: Union[tls_route.GetTlsRouteRequest, dict] = None,
+        request: Optional[Union[tls_route.GetTlsRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> tls_route.TlsRoute:
         r"""Gets details of a single TlsRoute.
@@ -3550,7 +3568,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetTlsRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetTlsRouteRequest, dict]]):
                 The request object. Request used by the GetTlsRoute
                 method.
             name (:class:`str`):
@@ -3617,13 +3635,13 @@ class NetworkServicesAsyncClient:
 
     async def create_tls_route(
         self,
-        request: Union[gcn_tls_route.CreateTlsRouteRequest, dict] = None,
+        request: Optional[Union[gcn_tls_route.CreateTlsRouteRequest, dict]] = None,
         *,
-        parent: str = None,
-        tls_route: gcn_tls_route.TlsRoute = None,
-        tls_route_id: str = None,
+        parent: Optional[str] = None,
+        tls_route: Optional[gcn_tls_route.TlsRoute] = None,
+        tls_route_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new TlsRoute in a given project and
@@ -3666,7 +3684,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateTlsRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateTlsRouteRequest, dict]]):
                 The request object. Request used by the TlsRoute method.
             parent (:class:`str`):
                 Required. The parent resource of the TlsRoute. Must be
@@ -3760,12 +3778,12 @@ class NetworkServicesAsyncClient:
 
     async def update_tls_route(
         self,
-        request: Union[gcn_tls_route.UpdateTlsRouteRequest, dict] = None,
+        request: Optional[Union[gcn_tls_route.UpdateTlsRouteRequest, dict]] = None,
         *,
-        tls_route: gcn_tls_route.TlsRoute = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        tls_route: Optional[gcn_tls_route.TlsRoute] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single TlsRoute.
@@ -3805,7 +3823,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateTlsRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateTlsRouteRequest, dict]]):
                 The request object. Request used by the UpdateTlsRoute
                 method.
             tls_route (:class:`google.cloud.network_services_v1.types.TlsRoute`):
@@ -3894,11 +3912,11 @@ class NetworkServicesAsyncClient:
 
     async def delete_tls_route(
         self,
-        request: Union[tls_route.DeleteTlsRouteRequest, dict] = None,
+        request: Optional[Union[tls_route.DeleteTlsRouteRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single TlsRoute.
@@ -3934,7 +3952,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteTlsRouteRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteTlsRouteRequest, dict]]):
                 The request object. Request used by the DeleteTlsRoute
                 method.
             name (:class:`str`):
@@ -4018,11 +4036,13 @@ class NetworkServicesAsyncClient:
 
     async def list_service_bindings(
         self,
-        request: Union[service_binding.ListServiceBindingsRequest, dict] = None,
+        request: Optional[
+            Union[service_binding.ListServiceBindingsRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListServiceBindingsAsyncPager:
         r"""Lists ServiceBinding in a given project and location.
@@ -4055,7 +4075,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListServiceBindingsRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListServiceBindingsRequest, dict]]):
                 The request object. Request used with the
                 ListServiceBindings method.
             parent (:class:`str`):
@@ -4134,11 +4154,11 @@ class NetworkServicesAsyncClient:
 
     async def get_service_binding(
         self,
-        request: Union[service_binding.GetServiceBindingRequest, dict] = None,
+        request: Optional[Union[service_binding.GetServiceBindingRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> service_binding.ServiceBinding:
         r"""Gets details of a single ServiceBinding.
@@ -4170,7 +4190,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetServiceBindingRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetServiceBindingRequest, dict]]):
                 The request object. Request used by the
                 GetServiceBinding method.
             name (:class:`str`):
@@ -4238,13 +4258,15 @@ class NetworkServicesAsyncClient:
 
     async def create_service_binding(
         self,
-        request: Union[gcn_service_binding.CreateServiceBindingRequest, dict] = None,
+        request: Optional[
+            Union[gcn_service_binding.CreateServiceBindingRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        service_binding: gcn_service_binding.ServiceBinding = None,
-        service_binding_id: str = None,
+        parent: Optional[str] = None,
+        service_binding: Optional[gcn_service_binding.ServiceBinding] = None,
+        service_binding_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new ServiceBinding in a given project and
@@ -4287,7 +4309,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateServiceBindingRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateServiceBindingRequest, dict]]):
                 The request object. Request used by the ServiceBinding
                 method.
             parent (:class:`str`):
@@ -4381,11 +4403,13 @@ class NetworkServicesAsyncClient:
 
     async def delete_service_binding(
         self,
-        request: Union[service_binding.DeleteServiceBindingRequest, dict] = None,
+        request: Optional[
+            Union[service_binding.DeleteServiceBindingRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single ServiceBinding.
@@ -4421,7 +4445,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteServiceBindingRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteServiceBindingRequest, dict]]):
                 The request object. Request used by the
                 DeleteServiceBinding method.
             name (:class:`str`):
@@ -4506,11 +4530,11 @@ class NetworkServicesAsyncClient:
 
     async def list_meshes(
         self,
-        request: Union[mesh.ListMeshesRequest, dict] = None,
+        request: Optional[Union[mesh.ListMeshesRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListMeshesAsyncPager:
         r"""Lists Meshes in a given project and location.
@@ -4543,7 +4567,7 @@ class NetworkServicesAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.ListMeshesRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.ListMeshesRequest, dict]]):
                 The request object. Request used with the ListMeshes
                 method.
             parent (:class:`str`):
@@ -4622,11 +4646,11 @@ class NetworkServicesAsyncClient:
 
     async def get_mesh(
         self,
-        request: Union[mesh.GetMeshRequest, dict] = None,
+        request: Optional[Union[mesh.GetMeshRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> mesh.Mesh:
         r"""Gets details of a single Mesh.
@@ -4658,7 +4682,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.GetMeshRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.GetMeshRequest, dict]]):
                 The request object. Request used by the GetMesh method.
             name (:class:`str`):
                 Required. A name of the Mesh to get. Must be in the
@@ -4727,13 +4751,13 @@ class NetworkServicesAsyncClient:
 
     async def create_mesh(
         self,
-        request: Union[gcn_mesh.CreateMeshRequest, dict] = None,
+        request: Optional[Union[gcn_mesh.CreateMeshRequest, dict]] = None,
         *,
-        parent: str = None,
-        mesh: gcn_mesh.Mesh = None,
-        mesh_id: str = None,
+        parent: Optional[str] = None,
+        mesh: Optional[gcn_mesh.Mesh] = None,
+        mesh_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new Mesh in a given project and location.
@@ -4774,7 +4798,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.CreateMeshRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.CreateMeshRequest, dict]]):
                 The request object. Request used by the CreateMesh
                 method.
             parent (:class:`str`):
@@ -4870,12 +4894,12 @@ class NetworkServicesAsyncClient:
 
     async def update_mesh(
         self,
-        request: Union[gcn_mesh.UpdateMeshRequest, dict] = None,
+        request: Optional[Union[gcn_mesh.UpdateMeshRequest, dict]] = None,
         *,
-        mesh: gcn_mesh.Mesh = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        mesh: Optional[gcn_mesh.Mesh] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single Mesh.
@@ -4914,7 +4938,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.UpdateMeshRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.UpdateMeshRequest, dict]]):
                 The request object. Request used by the UpdateMesh
                 method.
             mesh (:class:`google.cloud.network_services_v1.types.Mesh`):
@@ -5005,11 +5029,11 @@ class NetworkServicesAsyncClient:
 
     async def delete_mesh(
         self,
-        request: Union[mesh.DeleteMeshRequest, dict] = None,
+        request: Optional[Union[mesh.DeleteMeshRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single Mesh.
@@ -5045,7 +5069,7 @@ class NetworkServicesAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.network_services_v1.types.DeleteMeshRequest, dict]):
+            request (Optional[Union[google.cloud.network_services_v1.types.DeleteMeshRequest, dict]]):
                 The request object. Request used by the DeleteMesh
                 method.
             name (:class:`str`):
@@ -5129,10 +5153,10 @@ class NetworkServicesAsyncClient:
 
     async def list_operations(
         self,
-        request: operations_pb2.ListOperationsRequest = None,
+        request: Optional[operations_pb2.ListOperationsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operations_pb2.ListOperationsResponse:
         r"""Lists operations that match the specified filter in the request.
@@ -5183,10 +5207,10 @@ class NetworkServicesAsyncClient:
 
     async def get_operation(
         self,
-        request: operations_pb2.GetOperationRequest = None,
+        request: Optional[operations_pb2.GetOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operations_pb2.Operation:
         r"""Gets the latest state of a long-running operation.
@@ -5237,10 +5261,10 @@ class NetworkServicesAsyncClient:
 
     async def delete_operation(
         self,
-        request: operations_pb2.DeleteOperationRequest = None,
+        request: Optional[operations_pb2.DeleteOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Deletes a long-running operation.
@@ -5292,10 +5316,10 @@ class NetworkServicesAsyncClient:
 
     async def cancel_operation(
         self,
-        request: operations_pb2.CancelOperationRequest = None,
+        request: Optional[operations_pb2.CancelOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Starts asynchronous cancellation on a long-running operation.
@@ -5346,10 +5370,10 @@ class NetworkServicesAsyncClient:
 
     async def set_iam_policy(
         self,
-        request: iam_policy_pb2.SetIamPolicyRequest = None,
+        request: Optional[iam_policy_pb2.SetIamPolicyRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
         r"""Sets the IAM access control policy on the specified function.
@@ -5466,10 +5490,10 @@ class NetworkServicesAsyncClient:
 
     async def get_iam_policy(
         self,
-        request: iam_policy_pb2.GetIamPolicyRequest = None,
+        request: Optional[iam_policy_pb2.GetIamPolicyRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
         r"""Gets the IAM access control policy for a function.
@@ -5587,10 +5611,10 @@ class NetworkServicesAsyncClient:
 
     async def test_iam_permissions(
         self,
-        request: iam_policy_pb2.TestIamPermissionsRequest = None,
+        request: Optional[iam_policy_pb2.TestIamPermissionsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Tests the specified IAM permissions against the IAM access control
@@ -5646,10 +5670,10 @@ class NetworkServicesAsyncClient:
 
     async def get_location(
         self,
-        request: locations_pb2.GetLocationRequest = None,
+        request: Optional[locations_pb2.GetLocationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> locations_pb2.Location:
         r"""Gets information about a location.
@@ -5700,10 +5724,10 @@ class NetworkServicesAsyncClient:
 
     async def list_locations(
         self,
-        request: locations_pb2.ListLocationsRequest = None,
+        request: Optional[locations_pb2.ListLocationsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> locations_pb2.ListLocationsResponse:
         r"""Lists information about the supported locations for this service.
