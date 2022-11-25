@@ -18,67 +18,79 @@ from google.cloud.network_services import gapic_version as package_version
 __version__ = package_version.__version__
 
 
-from .services.network_services import NetworkServicesClient
-from .services.network_services import NetworkServicesAsyncClient
-
-from .types.common import EndpointMatcher
-from .types.common import OperationMetadata
-from .types.common import TrafficPortSelector
-from .types.endpoint_policy import CreateEndpointPolicyRequest
-from .types.endpoint_policy import DeleteEndpointPolicyRequest
-from .types.endpoint_policy import EndpointPolicy
-from .types.endpoint_policy import GetEndpointPolicyRequest
-from .types.endpoint_policy import ListEndpointPoliciesRequest
-from .types.endpoint_policy import ListEndpointPoliciesResponse
-from .types.endpoint_policy import UpdateEndpointPolicyRequest
-from .types.gateway import CreateGatewayRequest
-from .types.gateway import DeleteGatewayRequest
-from .types.gateway import Gateway
-from .types.gateway import GetGatewayRequest
-from .types.gateway import ListGatewaysRequest
-from .types.gateway import ListGatewaysResponse
-from .types.gateway import UpdateGatewayRequest
-from .types.grpc_route import CreateGrpcRouteRequest
-from .types.grpc_route import DeleteGrpcRouteRequest
-from .types.grpc_route import GetGrpcRouteRequest
-from .types.grpc_route import GrpcRoute
-from .types.grpc_route import ListGrpcRoutesRequest
-from .types.grpc_route import ListGrpcRoutesResponse
-from .types.grpc_route import UpdateGrpcRouteRequest
-from .types.http_route import CreateHttpRouteRequest
-from .types.http_route import DeleteHttpRouteRequest
-from .types.http_route import GetHttpRouteRequest
-from .types.http_route import HttpRoute
-from .types.http_route import ListHttpRoutesRequest
-from .types.http_route import ListHttpRoutesResponse
-from .types.http_route import UpdateHttpRouteRequest
-from .types.mesh import CreateMeshRequest
-from .types.mesh import DeleteMeshRequest
-from .types.mesh import GetMeshRequest
-from .types.mesh import ListMeshesRequest
-from .types.mesh import ListMeshesResponse
-from .types.mesh import Mesh
-from .types.mesh import UpdateMeshRequest
-from .types.service_binding import CreateServiceBindingRequest
-from .types.service_binding import DeleteServiceBindingRequest
-from .types.service_binding import GetServiceBindingRequest
-from .types.service_binding import ListServiceBindingsRequest
-from .types.service_binding import ListServiceBindingsResponse
-from .types.service_binding import ServiceBinding
-from .types.tcp_route import CreateTcpRouteRequest
-from .types.tcp_route import DeleteTcpRouteRequest
-from .types.tcp_route import GetTcpRouteRequest
-from .types.tcp_route import ListTcpRoutesRequest
-from .types.tcp_route import ListTcpRoutesResponse
-from .types.tcp_route import TcpRoute
-from .types.tcp_route import UpdateTcpRouteRequest
-from .types.tls_route import CreateTlsRouteRequest
-from .types.tls_route import DeleteTlsRouteRequest
-from .types.tls_route import GetTlsRouteRequest
-from .types.tls_route import ListTlsRoutesRequest
-from .types.tls_route import ListTlsRoutesResponse
-from .types.tls_route import TlsRoute
-from .types.tls_route import UpdateTlsRouteRequest
+from .services.network_services import NetworkServicesAsyncClient, NetworkServicesClient
+from .types.common import EndpointMatcher, OperationMetadata, TrafficPortSelector
+from .types.endpoint_policy import (
+    CreateEndpointPolicyRequest,
+    DeleteEndpointPolicyRequest,
+    EndpointPolicy,
+    GetEndpointPolicyRequest,
+    ListEndpointPoliciesRequest,
+    ListEndpointPoliciesResponse,
+    UpdateEndpointPolicyRequest,
+)
+from .types.gateway import (
+    CreateGatewayRequest,
+    DeleteGatewayRequest,
+    Gateway,
+    GetGatewayRequest,
+    ListGatewaysRequest,
+    ListGatewaysResponse,
+    UpdateGatewayRequest,
+)
+from .types.grpc_route import (
+    CreateGrpcRouteRequest,
+    DeleteGrpcRouteRequest,
+    GetGrpcRouteRequest,
+    GrpcRoute,
+    ListGrpcRoutesRequest,
+    ListGrpcRoutesResponse,
+    UpdateGrpcRouteRequest,
+)
+from .types.http_route import (
+    CreateHttpRouteRequest,
+    DeleteHttpRouteRequest,
+    GetHttpRouteRequest,
+    HttpRoute,
+    ListHttpRoutesRequest,
+    ListHttpRoutesResponse,
+    UpdateHttpRouteRequest,
+)
+from .types.mesh import (
+    CreateMeshRequest,
+    DeleteMeshRequest,
+    GetMeshRequest,
+    ListMeshesRequest,
+    ListMeshesResponse,
+    Mesh,
+    UpdateMeshRequest,
+)
+from .types.service_binding import (
+    CreateServiceBindingRequest,
+    DeleteServiceBindingRequest,
+    GetServiceBindingRequest,
+    ListServiceBindingsRequest,
+    ListServiceBindingsResponse,
+    ServiceBinding,
+)
+from .types.tcp_route import (
+    CreateTcpRouteRequest,
+    DeleteTcpRouteRequest,
+    GetTcpRouteRequest,
+    ListTcpRoutesRequest,
+    ListTcpRoutesResponse,
+    TcpRoute,
+    UpdateTcpRouteRequest,
+)
+from .types.tls_route import (
+    CreateTlsRouteRequest,
+    DeleteTlsRouteRequest,
+    GetTlsRouteRequest,
+    ListTlsRoutesRequest,
+    ListTlsRoutesResponse,
+    TlsRoute,
+    UpdateTlsRouteRequest,
+)
 
 __all__ = (
     "NetworkServicesAsyncClient",

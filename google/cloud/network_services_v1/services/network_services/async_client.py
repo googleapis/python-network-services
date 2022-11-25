@@ -27,14 +27,14 @@ from typing import (
     Type,
     Union,
 )
-import pkg_resources
 
-from google.api_core.client_options import ClientOptions
 from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import retry as retries
+from google.api_core.client_options import ClientOptions
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account  # type: ignore
+import pkg_resources
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
@@ -44,12 +44,22 @@ except AttributeError:  # pragma: NO COVER
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.location import locations_pb2  # type: ignore
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.longrunning import operations_pb2
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+
 from google.cloud.network_services_v1.services.network_services import pagers
-from google.cloud.network_services_v1.types import common
-from google.cloud.network_services_v1.types import endpoint_policy
 from google.cloud.network_services_v1.types import (
     endpoint_policy as gcn_endpoint_policy,
 )
+from google.cloud.network_services_v1.types import (
+    service_binding as gcn_service_binding,
+)
+from google.cloud.network_services_v1.types import common
+from google.cloud.network_services_v1.types import endpoint_policy
 from google.cloud.network_services_v1.types import gateway
 from google.cloud.network_services_v1.types import gateway as gcn_gateway
 from google.cloud.network_services_v1.types import grpc_route
@@ -59,22 +69,14 @@ from google.cloud.network_services_v1.types import http_route as gcn_http_route
 from google.cloud.network_services_v1.types import mesh
 from google.cloud.network_services_v1.types import mesh as gcn_mesh
 from google.cloud.network_services_v1.types import service_binding
-from google.cloud.network_services_v1.types import (
-    service_binding as gcn_service_binding,
-)
 from google.cloud.network_services_v1.types import tcp_route
 from google.cloud.network_services_v1.types import tcp_route as gcn_tcp_route
 from google.cloud.network_services_v1.types import tls_route
 from google.cloud.network_services_v1.types import tls_route as gcn_tls_route
-from google.iam.v1 import iam_policy_pb2  # type: ignore
-from google.iam.v1 import policy_pb2  # type: ignore
-from google.longrunning import operations_pb2
-from google.protobuf import empty_pb2  # type: ignore
-from google.protobuf import field_mask_pb2  # type: ignore
-from google.protobuf import timestamp_pb2  # type: ignore
-from .transports.base import NetworkServicesTransport, DEFAULT_CLIENT_INFO
-from .transports.grpc_asyncio import NetworkServicesGrpcAsyncIOTransport
+
 from .client import NetworkServicesClient
+from .transports.base import DEFAULT_CLIENT_INFO, NetworkServicesTransport
+from .transports.grpc_asyncio import NetworkServicesGrpcAsyncIOTransport
 
 
 class NetworkServicesAsyncClient:

@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from .client import NetworkServicesClient
 from .async_client import NetworkServicesAsyncClient
+from .client import NetworkServicesClient
 
 __all__ = (
     "NetworkServicesClient",
