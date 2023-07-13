@@ -272,10 +272,12 @@ class GrpcRoute(proto.Message):
                 Optional. Specifies the proportion of
                 requests forwarded to the backend referenced by
                 the serviceName field. This is computed as:
-                weight/Sum(weights in this destination list).
-                For non-zero values, there may be some epsilon
-                from the exact proportion defined here depending
-                on the precision an implementation supports.
+
+                        weight/Sum(weights in this destination
+                list). For non-zero values, there may be some
+                epsilon from the exact proportion defined here
+                depending on the precision an implementation
+                supports.
                 If only one serviceName is specified and it has
                 a weight greater than 0, 100% of the traffic is
                 forwarded to that backend.

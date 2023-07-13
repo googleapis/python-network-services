@@ -124,6 +124,7 @@ class TcpRoute(proto.Message):
                 matches a single IP address). Only IPV4
                 addresses are supported.
                 Examples:
+
                 "10.0.0.1" - matches against this exact IP
                 address. "10.0.0.0/8" - matches against any IP
                 address within the 10.0.0.0 subnet and
@@ -182,10 +183,12 @@ class TcpRoute(proto.Message):
                 Optional. Specifies the proportion of
                 requests forwarded to the backend referenced by
                 the serviceName field. This is computed as:
-                weight/Sum(weights in this destination list).
-                For non-zero values, there may be some epsilon
-                from the exact proportion defined here depending
-                on the precision an implementation supports.
+
+                        weight/Sum(weights in this destination
+                list). For non-zero values, there may be some
+                epsilon from the exact proportion defined here
+                depending on the precision an implementation
+                supports.
                 If only one serviceName is specified and it has
                 a weight greater than 0, 100% of the traffic is
                 forwarded to that backend.
