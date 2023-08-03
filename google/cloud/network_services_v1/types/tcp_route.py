@@ -152,12 +152,15 @@ class TcpRoute(proto.Message):
             destinations (MutableSequence[google.cloud.network_services_v1.types.TcpRoute.RouteDestination]):
                 Optional. The destination services to which
                 traffic should be forwarded. At least one
-                destination service is required.
+                destination service is required. Only one of
+                route destination or original destination can be
+                set.
             original_destination (bool):
                 Optional. If true, Router will use the
                 destination IP and port of the original
                 connection as the destination of the request.
-                Default is false.
+                Default is false. Only one of route destinations
+                or original destination can be set.
         """
 
         destinations: MutableSequence[
@@ -184,11 +187,11 @@ class TcpRoute(proto.Message):
                 requests forwarded to the backend referenced by
                 the serviceName field. This is computed as:
 
-                        weight/Sum(weights in this destination
-                list). For non-zero values, there may be some
-                epsilon from the exact proportion defined here
-                depending on the precision an implementation
-                supports.
+                - weight/Sum(weights in this destination list).
+                  For non-zero values, there may be some epsilon
+                  from the exact proportion defined here
+                  depending on the precision an implementation
+                  supports.
                 If only one serviceName is specified and it has
                 a weight greater than 0, 100% of the traffic is
                 forwarded to that backend.
@@ -335,7 +338,7 @@ class CreateTcpRouteRequest(proto.Message):
             the format ``projects/*/locations/global``.
         tcp_route_id (str):
             Required. Short name of the TcpRoute resource
-            to be created. E.g. TODO(Add an example).
+            to be created.
         tcp_route (google.cloud.network_services_v1.types.TcpRoute):
             Required. TcpRoute resource to be created.
     """
