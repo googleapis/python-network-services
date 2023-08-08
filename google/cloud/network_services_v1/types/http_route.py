@@ -388,6 +388,7 @@ class HttpRoute(proto.Message):
                   from the exact proportion defined here
                   depending on the precision an implementation
                   supports.
+
                 If only one serviceName is specified and it has
                 a weight greater than 0, 100% of the traffic is
                 forwarded to that backend.
